@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yasein Ossama Mohamed Eldeeb | Portfolio</title>
+  <meta name="description" content="Portfolio of Yasein Ossama Mohamed Eldeeb — Software Developer / Programmer." />
+  <meta name="theme-color" content="#00ADB5" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; scroll-behavior: smooth; }
+    :root {
+      --bg: #FAFAFA;
+      --section-bg: #F0F0F0;
+      --primary: #00ADB5;
+      --secondary: #393E46;
+      --heading: #222831;
+      --text: #555555;
+      --radius: 14px;
+      --shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+    body {
+      margin:0;
+      font-family:'Segoe UI',Roboto,Arial;
+      background:var(--bg);
+      color:var(--text);
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+    h1,h2,h3{color:var(--heading);margin-bottom:12px}
+    p{margin-bottom:14px;line-height:1.6}
+    section{
+      max-width:1100px;
+      margin:0 auto;
+      padding:90px 20px;
+      opacity:0;
+      transform:translateY(40px);
+      animation:fadeInUp 1s forwards
+    }
+    section:nth-of-type(1){animation-delay:0.2s}
+    section:nth-of-type(2){animation-delay:0.4s}
+    section:nth-of-type(3){animation-delay:0.6s}
+    section:nth-of-type(4){animation-delay:0.8s}
+    section:nth-of-type(5){animation-delay:1s}
+    section:nth-of-type(6){animation-delay:1.2s}
+    @keyframes fadeInUp { to {opacity:1; transform:translateY(0);} }
+    .btn{
+      padding:12px 24px;
+      border-radius:var(--radius);
+      font-weight:600;
+      background:var(--primary);
+      color:#fff;
+      border:none;
+      box-shadow:var(--shadow);
+      cursor:pointer;
+      transition: background-color 0.4s ease, color 0.4s ease, transform 0.2s ease;
+    }
+    .btn:hover{background:var(--secondary);transform:translateY(-2px)}
+    .btn.ghost{background:transparent;color:var(--primary);border:2px solid var(--primary)}
+    .btn.ghost:hover{background:var(--primary);color:#fff}
+    .card{
+      background:#fff;
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:var(--shadow);
+      transition: background-color 0.4s ease, color 0.4s ease, transform 0.2s ease;
+    }
+    .card:hover{transform:translateY(-4px)}
+    .grid{display:grid;gap:20px}
+    img{max-width:100%;border-radius:var(--radius)}
+    header{
+      position:sticky;
+      top:0;
+      background:#fff;
+      border-bottom:1px solid #eee;
+      box-shadow:0 2px 6px rgba(0,0,0,.04);
+      z-index:10;
+      transition: background-color 0.4s ease, border-color 0.4s ease;
+    }
+    nav a{
+      margin:0 16px;
+      padding:14px 18px;
+      font-weight:600;
+      color:var(--heading);
+      position:relative;
+      text-decoration:none;
+      display:inline-block;
+      transition: color 0.4s ease;
+    }
+    nav a::after{
+      content:'';
+      position:absolute;
+      left:50%;
+      bottom:0;
+      width:0;
+      height:3px;
+      background:var(--primary);
+      transition:.3s;
+      transform:translateX(-50%)
+    }
+    nav a:hover{color:var(--primary)}
+    nav a:hover::after{width:100%}
+    .hero{
+      padding:120px 20px;
+      text-align:center;
+      background:var(--section-bg);
+      transition: background-color 0.4s ease;
+    }
+    .hero img{
+      width:180px;
+      height:180px;
+      border-radius:50%;
+      object-fit:cover;
+      margin-bottom:20px;
+      box-shadow:var(--shadow);
+      animation:zoomIn 1s forwards
+    }
+    @keyframes zoomIn { from {opacity:0; transform:scale(0.8);} to {opacity:1; transform:scale(1);} }
+    .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+    .project img{aspect-ratio:16/10;object-fit:cover;animation:fadeIn 1.2s forwards}
+    @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+    .achieve-list{display:grid;gap:10px}
+    .contact{
+      text-align:center;
+      background:var(--section-bg);
+      transition: background-color 0.4s ease;
+    }
+    .contact .links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      justify-content:center;
+      margin-top:20px
+    }
+    footer{
+      text-align:center;
+      padding:20px;
+      background:#eeeeee;
+      color:#666;
+      font-size:14px;
+      margin-top:40px;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+    @media(max-width:700px){
+      .hero{padding:80px 20px}
+      nav a{margin:0 8px;padding:10px 12px;font-size:14px}
+    }
+
+    /* DARK MODE */
+    body.dark { background:#121212; color:#e0e0e0; }
+    body.dark header{ background:#1E1E1E; border-bottom:1px solid #333; }
+    body.dark .card{ background:#1E1E1E; color:#e0e0e0; }
+    body.dark nav a{ color:#fff; }
+    body.dark nav a:hover::after{ background:var(--secondary); }
+    body.dark .hero, body.dark .contact{ background:#1a1a1a; }
+    body.dark footer{ background:#0d0d0d; color:#aaa; }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="max-width:1100px;margin:0 auto;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;">
+      <div class="brand"><strong>Yasein Eldeeb</strong></div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button id="themeToggle" class="btn ghost" style="padding:10px 14px;font-size:14px">🌙</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="profilepic.jpg" alt="Profile Picture">
+    <h1>Yasein Ossama Mohamed Eldeeb</h1>
+    <h2 style="color:var(--primary);">Programmer / Software Developer</h2>
+    <p>I build clean, reliable software and turn data & ideas into usable products.</p>
+    <a href="#contact" class="btn">Hire Me</a>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+      <p>I am a Computer & Communications Engineering student at Alexandria University (expected graduation 2027). Passionate about software development, data analysis, and AI, I bring a strong foundation in programming (C, Java) and practical training in robotics and AI. I aim to build impactful, real-world applications through teamwork, problem-solving, and continuous learning.</p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" style="background:var(--section-bg)">
+    <h2>Skills & Tools</h2>
+    <div class="skills">
+      <div class="card"><h3>Programming Languages</h3><p>C, Java, C++ (basic), Python (basic)</p></div>
+      <div class="card"><h3>Data & Analytics</h3><p>SQL, Excel, Google Data Studio</p></div>
+      <div class="card"><h3>Tools</h3><p>Git, GitHub, MS Office</p></div>
+      <div class="card"><h3>Embedded & Robotics</h3><p>Arduino, Microcontrollers</p></div>
+      <div class="card"><h3>Soft Skills</h3><p>Problem-Solving, Teamwork, Communication, Time Management</p></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card project">
+        <img src="sotialplatform.jpg" alt="Java Social Platform">
+        <h3>Java-based Social Media Platform</h3>
+        <p><strong>Purpose:</strong> Simulated core social features (login, profiles, messaging, notifications).</p>
+        <p><strong>Role & Tech:</strong> Student Developer · Java, OOP, Data Structures, Git</p>
+        <p><strong>What I did:</strong> Built user management, message queues, and notifications. Applied OOP patterns and Git.</p>
+        <p><strong>Outcome:</strong> Completed full platform as coursework, improving OOP and teamwork.</p>
+      </div>
+      <div class="card project">
+        <img src="AI.jpg" alt="AI Diabetes Prediction">
+        <h3>Diabetes Prediction Prototype</h3>
+        <p><strong>Purpose:</strong> Compare ML models to predict diabetes and select the most accurate one.</p>
+        <p><strong>Role & Tech:</strong> Trainee · Python (pandas, sklearn)</p>
+        <p><strong>What I did:</strong> Prepared datasets, trained models, compared metrics, deployed best model.</p>
+        <p><strong>Outcome:</strong> Prototype achieved strong accuracy; presented in WE Telecom Egypt AI training.</p>
+      </div>
+      <div class="card project">
+        <img src="robotic.jpg" alt="Infrared Robot">
+        <h3>Infrared Sensor Robot</h3>
+        <p><strong>Purpose:</strong> Build a robot using IR sensors to navigate and avoid obstacles.</p>
+        <p><strong>Role & Tech:</strong> Trainee · Arduino, Sensors, C/C++ basics</p>
+        <p><strong>What I did:</strong> Wired sensors, wrote microcontroller logic, tested thresholds.</p>
+        <p><strong>Outcome:</strong> Working prototype showcasing robotics fundamentals.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements" style="background:var(--section-bg)">
+    <h2>Achievements & Certificates</h2>
+    <div class="achieve-list card">
+      <div>Mobility Talk Students' Summit — Cairo University (Jan 2025)</div>
+      <div>Beaver Egypt Competition Scholarship (MCIT + AASTMT) — Jan 2019</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Open to internships, freelance projects, and collaborations.</p>
+    <div class="links">
+      <a class="btn" href="mailto:Yasein.eldeeb3@gmail.com">Email</a>
+      <a class="btn ghost" href="tel:+2001202258655">Call</a>
+      <a class="btn ghost" href="https://github.com/LADA52">GitHub</a>
+      <a class="btn ghost" href="https://linkedin.com/in/yasein-eldeeb-72686b1b4">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Yasein Eldeeb. All rights reserved.
+  </footer>
+
+  <script>
+    const themeBtn = document.getElementById('themeToggle');
+
+    // عند تحميل الصفحة
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark");
+      themeBtn.textContent = "☀️";
+    } else {
+      themeBtn.textContent = "🌙";
+    }
+
+    // عند الضغط على الزر
+    themeBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      if (document.body.classList.contains("dark")) {
+        localStorage.setItem("theme", "dark");
+        themeBtn.textContent = "☀️";
+      } else {
+        localStorage.setItem("theme", "light");
+        themeBtn.textContent = "🌙";
+      }
+    });
+
+    // تحديث السنة في الفوتر
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
