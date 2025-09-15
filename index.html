@@ -160,7 +160,6 @@
       width: 100%
     }
 
-    /* الخلفية المتحركة على مستوى الصفحة كلها */
     body {
       margin: 0;
       padding: 0;
@@ -170,18 +169,16 @@
       color: var(--text);
     }
 
-    /* hero section شفاف */
     .hero {
       padding: 120px 20px;
       text-align: center;
       background: transparent;
-      /* مهم */
+
       color: #fff;
 
     }
 
 
-    /* صورة الهيرو */
     .hero img {
       width: 180px;
       height: 180px;
@@ -193,7 +190,6 @@
       border: 4px solid #fff;
     }
 
-    /* الأنيميشن بتاع الصورة */
     @keyframes zoomIn {
       from {
         opacity: 0;
@@ -221,7 +217,7 @@
       }
     }
 
-    /* الروابط في الـ contact */
+
     .contact .links {
       display: flex;
       flex-wrap: wrap;
@@ -230,7 +226,7 @@
       margin-top: 20px;
     }
 
-    /* الموبايل */
+
     @media(max-width:700px) {
       .hero {
         padding: 80px 20px;
@@ -249,7 +245,7 @@
       font-weight: bold;
       color: #fff;
       min-height: 28px;
-      /* عشان النص ما يزقش العناصر لما يتغير */
+
     }
 
 
@@ -279,6 +275,7 @@
       }
     }
 
+
     .skills {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -306,7 +303,48 @@
       align-self: flex-start;
     }
 
-    /* Achievements Grid */
+
+    @keyframes rotateIcon {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      50% {
+        transform: rotate(10deg);
+      }
+
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+
+
+    @keyframes bounceIcon {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+
+    #offers i {
+      transition: transform 0.3s ease;
+      display: inline-block;
+    }
+
+
+    #offers .card:hover i {
+      animation: bounceIcon 0.6s ease;
+      color: var(--secondary);
+
+    }
+
+
     .achieve-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -875,9 +913,7 @@
       top: 0;
       z-index: 100;
       background: rgba(255, 255, 255, 0.9);
-      /* شبه شفاف */
       backdrop-filter: blur(8px);
-      /* تأثير زجاج */
       border-bottom: 1px solid rgba(0, 0, 0, 0.05);
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     }
@@ -950,8 +986,8 @@
   </style>
   <script>
     const roles = ["Programmer", "Software Developer"];
-    let index = 0;      // الدور الحالي (Programmer / Developer)
-    let charIndex = 0;  // الحرف الحالي
+    let index = 0;
+    let charIndex = 0;
     let isDeleting = false;
     const roleElement = document.getElementById("role");
 
@@ -959,22 +995,21 @@
       const currentRole = roles[index];
 
       if (isDeleting) {
-        // لو بيتمسح
         roleElement.textContent = currentRole.substring(0, charIndex--);
         if (charIndex < 0) {
           isDeleting = false;
-          index = (index + 1) % roles.length; // انتقل للدور التالي
+          index = (index + 1) % roles.length;
         }
       } else {
-        // لو بيتكتب
+
         roleElement.textContent = currentRole.substring(0, charIndex++);
         if (charIndex > currentRole.length) {
           isDeleting = true;
-          setTimeout(typeEffect, 800); // استنى ثانية بعد الكتابة
+          setTimeout(typeEffect, 800);
           return;
         }
       }
-      setTimeout(typeEffect, isDeleting ? 50 : 100); // سرعة الكتابة/المسح
+      setTimeout(typeEffect, isDeleting ? 50 : 100);
     }
 
     typeEffect();
