@@ -160,13 +160,28 @@
       width: 100%
     }
 
+    /* الخلفية المتحركة على مستوى الصفحة كلها */
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--gradient);
+      background-size: 400% 400%;
+      animation: gradientMove 12s ease infinite;
+      color: var(--text);
+    }
+
+    /* hero section شفاف */
     .hero {
       padding: 120px 20px;
       text-align: center;
-      background: linear-gradient(135deg, #1A2B4C 40%, #EAF3FA 100%);
-      color: #fff
+      background: transparent;
+      /* مهم */
+      color: #fff;
+
     }
 
+
+    /* صورة الهيرو */
     .hero img {
       width: 180px;
       height: 180px;
@@ -175,9 +190,10 @@
       margin-bottom: 20px;
       box-shadow: var(--shadow);
       animation: zoomIn 1s forwards;
-      border: 4px solid #fff
+      border: 4px solid #fff;
     }
 
+    /* الأنيميشن بتاع الصورة */
     @keyframes zoomIn {
       from {
         opacity: 0;
@@ -189,6 +205,53 @@
         transform: scale(1);
       }
     }
+
+    /* حركة الخلفية */
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* الروابط في الـ contact */
+    .contact .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    /* الموبايل */
+    @media(max-width:700px) {
+      .hero {
+        padding: 80px 20px;
+      }
+
+      nav a {
+        margin: 0 8px;
+        padding: 10px 12px;
+        font-size: 14px;
+      }
+
+    }
+
+    .hero h2 {
+      font-size: 22px;
+      font-weight: bold;
+      color: #fff;
+      min-height: 28px;
+      /* عشان النص ما يزقش العناصر لما يتغير */
+    }
+
 
     /* Typing effect */
     .typing {
@@ -328,36 +391,7 @@
       background: var(--section-bg)
     }
 
-    .hero {
-      padding: 120px 20px;
-      text-align: center;
-      background: var(--gradient);
-      background-size: 400% 400%;
-      animation: gradientMove 12s ease infinite;
-      color: #fff;
-    }
 
-    @keyframes gradientMove {
-      0% {
-        background-position: 0% 50%;
-      }
-
-      50% {
-        background-position: 100% 50%;
-      }
-
-      100% {
-        background-position: 0% 50%;
-      }
-    }
-
-    .contact .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      justify-content: center;
-      margin-top: 20px
-    }
 
     footer {
       text-align: center;
@@ -368,17 +402,7 @@
       margin-top: 40px
     }
 
-    @media(max-width:700px) {
-      .hero {
-        padding: 80px 20px
-      }
 
-      nav a {
-        margin: 0 8px;
-        padding: 10px 12px;
-        font-size: 14px
-      }
-    }
 
     /* Dark mode */
     body.dark {
@@ -489,12 +513,13 @@
   <section class="hero visible">
     <img src="profilepic.jpg" alt="Profile Picture">
     <h1>Yasein Ossama Mohamed Eldeeb</h1>
-    <div class="typing">Programmer / Software Developer</div>
+    <h2><span id="role"></span></h2>
     <p>I build clean, reliable software and turn data & ideas into usable products.</p>
     <a href="#contact" class="btn">
       <i class="fas fa-paper-plane"></i> Hire Me
     </a>
   </section>
+
 
 
   <!-- ABOUT -->
@@ -917,6 +942,38 @@
       transform: scale(1.1);
     }
   </style>
+  <script>
+    const roles = ["Programmer", "Software Developer"];
+    let index = 0;      // الدور الحالي (Programmer / Developer)
+    let charIndex = 0;  // الحرف الحالي
+    let isDeleting = false;
+    const roleElement = document.getElementById("role");
+
+    function typeEffect() {
+      const currentRole = roles[index];
+
+      if (isDeleting) {
+        // لو بيتمسح
+        roleElement.textContent = currentRole.substring(0, charIndex--);
+        if (charIndex < 0) {
+          isDeleting = false;
+          index = (index + 1) % roles.length; // انتقل للدور التالي
+        }
+      } else {
+        // لو بيتكتب
+        roleElement.textContent = currentRole.substring(0, charIndex++);
+        if (charIndex > currentRole.length) {
+          isDeleting = true;
+          setTimeout(typeEffect, 800); // استنى ثانية بعد الكتابة
+          return;
+        }
+      }
+      setTimeout(typeEffect, isDeleting ? 50 : 100); // سرعة الكتابة/المسح
+    }
+
+    typeEffect();
+  </script>
+
 </body>
 
 </html>
