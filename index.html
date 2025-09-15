@@ -18,15 +18,16 @@
     }
 
     :root {
-      --bg: #F9FBFD;
-      --section-bg: #EAF3FA;
-      --primary: #1A2B4C;
-      --secondary: #0D6EFD;
-      --highlight: #0DCAF0;
-      --heading: #0F1B2C;
+      --bg: #ffffff;
+      --section-bg: #f5f7fa;
+      --primary: #0a2540;
+      --secondary: #0056b3;
+      --highlight: #0073e6;
+      --heading: #0a2540;
       --text: #333333;
       --radius: 14px;
       --shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      --gradient: linear-gradient(270deg, #0a2540, #0056b3, #0073e6, #0056b3, #0a2540);
     }
 
     body {
@@ -327,6 +328,29 @@
       background: var(--section-bg)
     }
 
+    .hero {
+      padding: 120px 20px;
+      text-align: center;
+      background: var(--gradient);
+      background-size: 400% 400%;
+      animation: gradientMove 12s ease infinite;
+      color: #fff;
+    }
+
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
     .contact .links {
       display: flex;
       flex-wrap: wrap;
@@ -452,10 +476,10 @@
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
-        <a href="#offers">My Offers</a>
+        <a href="#offers">Offers</a>
         <a href="#education">Education</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#contact">Contact</a>
+        <a href="#achievements">Certificates</a>
+        <a href="#contact">Contact-me</a>
       </nav>
       <button id="themeToggle" class="btn ghost" style="padding:10px 14px;font-size:14px"><i
           class="fas fa-moon"></i></button>
@@ -477,24 +501,24 @@
   <section id="about">
     <h2>About Me</h2>
     <div class="card">
-      <p> Hey Iam Yasein I am a Computer & Communications Engineering student at Alexandria University (expected
-        graduation 2027) . At 13, before I even learned to code , I discovered my passion for engineering , I built my
-        first drone by experimenting with circuits and robotics — a moment that shaped how I see challenges: as
-        opportunities to create. A year later, I was selected to compete in a national program by the Ministry of
-        Communications designed to train top talent for international programming contests.
+      <p> Hey, I’m Yasein — a Computer & Communications Engineering student at Alexandria University (expected
+        graduation 2027). My passion for engineering began at 13, when I built my first drone by experimenting with
+        circuits and robotics before I even learned to code. That moment shaped how I see challenges: not as obstacles,
+        but as opportunities to create.
 
-        Now, as a Computer & Communications Engineering student at Alexandria University , I’ve grown from hardware
-        tinkering to software innovation, with a solid background in programming (C, Java) and a strong focus on data
-        analysis, machine learning, and AI. I enjoy turning raw data into insights and developing AI-driven applications
-        with real-world impact, particularly in healthcare and automation.
+        A year later, I was selected by the Ministry of Communications for a national program preparing top talent for
+        international programming contests. Since then, I’ve grown from hardware tinkering to software innovation,
+        developing a strong foundation in programming (C, Java) and focusing on data analysis, machine learning, and AI.
+        I enjoy turning raw data into insights and creating AI-driven applications with real-world impact, particularly
+        in healthcare and automation.
 
-        I thrive both independently and in teams — collaboration sharpens my communication and leadership skills, while
-        solo projects push my focus and creativity. Beyond academics, I’ve led and contributed to large volunteer
-        initiatives, from organizing events to supporting medical campaigns, experiences that taught me how to deliver
-        under pressure and make a difference at scale.
+        I thrive both independently and in teams. Collaboration sharpens my communication and leadership skills, while
+        solo projects push my focus and creativity. Beyond academics, I’ve volunteered with large initiatives and
+        organizations like AYDA, leading events and supporting medical campaigns. These experiences taught me how to
+        deliver under pressure, communicate effectively, and make a difference at scale.
 
-        What excites me most is leaving a personal fingerprint on every project: building solutions that are innovative,
-        reliable, and designed to truly matter.</p>
+        What excites me most is leaving a personal fingerprint on every project — building solutions that are
+        innovative, reliable, and designed to truly matter.</p>
     </div>
   </section>
 
