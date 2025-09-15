@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,7 +10,13 @@
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    *, *::before, *::after { box-sizing: border-box; scroll-behavior: smooth; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     :root {
       --bg: #F9FBFD;
       --section-bg: #EAF3FA;
@@ -19,59 +26,221 @@
       --heading: #0F1B2C;
       --text: #333333;
       --radius: 14px;
-      --shadow: 0 6px 18px rgba(0,0,0,0.08);
+      --shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
     }
-    body {margin:0;font-family:'Segoe UI',Roboto,Arial;background:var(--bg);color:var(--text);}
-    h1,h2,h3{color:var(--heading);margin-bottom:12px}
-    p{margin-bottom:14px;line-height:1.6}
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Roboto, Arial;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: var(--heading);
+      margin-bottom: 12px
+    }
+
+    p {
+      margin-bottom: 14px;
+      line-height: 1.6
+    }
 
     /* Smooth fade-in sections */
     section {
-      max-width:1100px;margin:0 auto;padding:90px 20px;
-      opacity:0;transform:translateY(30px);
-      transition:opacity 0.8s ease, transform 0.8s ease;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 90px 20px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
-    section.visible {opacity:1;transform:translateY(0);}
 
-    .btn{padding:12px 24px;border-radius:var(--radius);font-weight:600;background:var(--primary);color:#fff;border:none;box-shadow:var(--shadow);cursor:pointer;transition:.3s;display:inline-flex;align-items:center;gap:8px}
-    .btn:hover{background:var(--secondary);transform:translateY(-3px) scale(1.03)}
-    .btn.ghost{background:transparent;color:var(--primary);border:2px solid var(--primary)}
-    .btn.ghost:hover{background:var(--primary);color:#fff}
-    .card{background:#fff;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);transition:transform .3s ease, box-shadow .3s ease;display:flex;flex-direction:column;height:100%}
-    .card:hover{transform:translateY(-6px);box-shadow:0 6px 20px rgba(0,0,0,0.15);}
-    .grid{display:grid;gap:20px}
-    img{max-width:100%;border-radius:var(--radius)}
-    header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;box-shadow:0 2px 6px rgba(0,0,0,.04);z-index:10}
-    nav a{margin:0 16px;padding:14px 18px;font-weight:600;color:var(--heading);position:relative;text-decoration:none;display:inline-block}
-    nav a::after{content:'';position:absolute;left:50%;bottom:0;width:0;height:3px;background:var(--secondary);transition:.3s;transform:translateX(-50%)}
-    nav a:hover{color:var(--secondary)}
-    nav a:hover::after{width:100%}
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-    .hero{padding:120px 20px;text-align:center;background:linear-gradient(135deg, #1A2B4C 40%, #EAF3FA 100%);color:#fff}
-    .hero img{width:180px;height:180px;border-radius:50%;object-fit:cover;margin-bottom:20px;box-shadow:var(--shadow);animation:zoomIn 1s forwards;border:4px solid #fff}
-    @keyframes zoomIn { from {opacity:0; transform:scale(0.8);} to {opacity:1; transform:scale(1);} }
+    .btn {
+      padding: 12px 24px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      transition: .3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .btn:hover {
+      background: var(--secondary);
+      transform: translateY(-3px) scale(1.03)
+    }
+
+    .btn.ghost {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary)
+    }
+
+    .btn.ghost:hover {
+      background: var(--primary);
+      color: #fff
+    }
+
+    .card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: transform .3s ease, box-shadow .3s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: var(--radius)
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, .04);
+      z-index: 10
+    }
+
+    nav a {
+      margin: 0 16px;
+      padding: 14px 18px;
+      font-weight: 600;
+      color: var(--heading);
+      position: relative;
+      text-decoration: none;
+      display: inline-block
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 0;
+      height: 3px;
+      background: var(--secondary);
+      transition: .3s;
+      transform: translateX(-50%)
+    }
+
+    nav a:hover {
+      color: var(--secondary)
+    }
+
+    nav a:hover::after {
+      width: 100%
+    }
+
+    .hero {
+      padding: 120px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #1A2B4C 40%, #EAF3FA 100%);
+      color: #fff
+    }
+
+    .hero img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+      animation: zoomIn 1s forwards;
+      border: 4px solid #fff
+    }
+
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
 
     /* Typing effect */
-    .typing { 
-      font-size: 22px; 
-      font-weight: 600; 
-      color: var(--highlight); 
-      border-right: 2px solid var(--highlight); 
-      white-space: nowrap; 
-      overflow: hidden; 
-      width: 0; 
-      animation: typing 3s steps(30,end) forwards, blink 0.8s infinite;
+    .typing {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--highlight);
+      border-right: 2px solid var(--highlight);
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 3s steps(30, end) forwards, blink 0.8s infinite;
       margin: 10px auto;
       display: inline-block;
     }
-    @keyframes typing { to { width: 100%; } }
-    @keyframes blink { 50% { border-color: transparent; } }
 
-    .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
-    .project img{aspect-ratio:16/10;object-fit:cover;transition:transform .3s ease}
-    .project img:hover{transform:scale(1.03)}
-    .project a.btn {margin-top:auto;align-self:flex-start;}
+    @keyframes typing {
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px
+    }
+
+    .project img {
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      transition: transform .3s ease
+    }
+
+    .project img:hover {
+      transform: scale(1.03)
+    }
+
+    .project a.btn {
+      margin-top: auto;
+      align-self: flex-start;
+    }
 
     /* Achievements Grid */
     .achieve-grid {
@@ -80,81 +249,216 @@
       gap: 20px;
       margin-top: 20px;
     }
+
     .certificate img {
-      width: 100%;height: 180px;object-fit: cover;border-radius: 10px;
-      cursor: pointer;margin-bottom: 10px;transition: transform .2s, box-shadow .2s;
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-bottom: 10px;
+      transition: transform .2s, box-shadow .2s;
     }
-    .certificate img:hover {transform: scale(1.03);box-shadow: 0 4px 16px rgba(0,0,0,0.2);}
-    #lightbox {display:none;position:fixed;z-index:1000;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);text-align:center;}
-    #lightbox img {margin-top:5%;max-width:90%;max-height:80%;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.5);}
-    #lightbox .close {position:absolute;top:20px;right:40px;color:#fff;font-size:40px;font-weight:bold;cursor:pointer;transition:.3s;}
-    #lightbox .close:hover {color:#f00;}
+
+    .certificate img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    #lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      text-align: center;
+    }
+
+    #lightbox img {
+      margin-top: 5%;
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    #lightbox .close {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    #lightbox .close:hover {
+      color: #f00;
+    }
 
     /* Animated underline for h2 */
-    h2 {position: relative;display:inline-block;padding-bottom:6px;}
-    h2::after {
-      content:"";position:absolute;left:0;bottom:0;width:0%;height:3px;background:var(--secondary);transition:width 0.5s ease;
+    h2 {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 6px;
     }
-    h2.visible::after {width:100%;}
 
-    .contact{text-align:center;background:var(--section-bg)}
-    .contact .links{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:20px}
-    footer{text-align:center;padding:20px;background:#1A2B4C;color:#fff;font-size:14px;margin-top:40px}
+    h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 3px;
+      background: var(--secondary);
+      transition: width 0.5s ease;
+    }
 
-    @media(max-width:700px){
-      .hero{padding:80px 20px}
-      nav a{margin:0 8px;padding:10px 12px;font-size:14px}
+    h2.visible::after {
+      width: 100%;
+    }
+
+    .contact {
+      text-align: center;
+      background: var(--section-bg)
+    }
+
+    .contact .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+      margin-top: 20px
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1A2B4C;
+      color: #fff;
+      font-size: 14px;
+      margin-top: 40px
+    }
+
+    @media(max-width:700px) {
+      .hero {
+        padding: 80px 20px
+      }
+
+      nav a {
+        margin: 0 8px;
+        padding: 10px 12px;
+        font-size: 14px
+      }
     }
 
     /* Dark mode */
-    body.dark{background:#121212;color:#e0e0e0}
-    body.dark header{background:#1E1E1E;border-bottom:1px solid #333}
-    body.dark .card{background:#1E1E1E;color:#e0e0e0}
-    body.dark nav a{color:#fff}
-    body.dark nav a:hover::after{background:var(--secondary)}
-    body.dark .contact{background:#1a1a1a}
-    body.dark footer{background:#0F1B2C;color:#aaa}
-    body.dark h1, body.dark h2, body.dark h3 {color:#ffffff;}
-    body.dark #skills, body.dark #education {background:#1E1E1E;}
-    body.dark #skills h2, body.dark #education h2 {color:var(--highlight);}
-    body.dark .btn.ghost{color:var(--highlight);border-color:var(--highlight)}
-    body.dark .btn.ghost:hover{background:var(--highlight);color:#121212}
+    body.dark {
+      background: #121212;
+      color: #e0e0e0
+    }
+
+    body.dark header {
+      background: #1E1E1E;
+      border-bottom: 1px solid #333
+    }
+
+    body.dark .card {
+      background: #1E1E1E;
+      color: #e0e0e0
+    }
+
+    body.dark nav a {
+      color: #fff
+    }
+
+    body.dark nav a:hover::after {
+      background: var(--secondary)
+    }
+
+    body.dark .contact {
+      background: #1a1a1a
+    }
+
+    body.dark footer {
+      background: #0F1B2C;
+      color: #aaa
+    }
+
+    body.dark h1,
+    body.dark h2,
+    body.dark h3 {
+      color: #ffffff;
+    }
+
+    body.dark #skills,
+    body.dark #education {
+      background: #1E1E1E;
+    }
+
+    body.dark #skills h2,
+    body.dark #education h2 {
+      color: var(--highlight);
+    }
+
+    body.dark .btn.ghost {
+      color: var(--highlight);
+      border-color: var(--highlight)
+    }
+
+    body.dark .btn.ghost:hover {
+      background: var(--highlight);
+      color: #121212
+    }
 
     /* Back to Top */
     #backToTop {
-      position:fixed;
-      bottom:20px;
-      right:20px;
-      background:var(--secondary);
-      color:#fff;
-      border:none;
-      border-radius:50%;
-      width:45px;height:45px;
-      display:none;
-      justify-content:center;
-      align-items:center;
-      cursor:pointer;
-      box-shadow:0 4px 12px rgba(0,0,0,0.2);
-      transition:background .3s, transform .3s;
-      z-index:999;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--secondary);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: background .3s, transform .3s;
+      z-index: 999;
     }
-    #backToTop:hover { background:#0B5ED7; transform:scale(1.1); }
+
+    #backToTop:hover {
+      background: #0B5ED7;
+      transform: scale(1.1);
+    }
   </style>
 </head>
+
 <body>
   <!-- HEADER -->
   <header>
-    <div style="max-width:1100px;margin:0 auto;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;">
+    <div
+      style="max-width:1100px;margin:0 auto;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;">
       <div class="brand"><strong>Yasein Eldeeb</strong></div>
       <nav>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#offers">My Offers</a>
         <a href="#education">Education</a>
         <a href="#achievements">Achievements</a>
         <a href="#contact">Contact</a>
       </nav>
-      <button id="themeToggle" class="btn ghost" style="padding:10px 14px;font-size:14px"><i class="fas fa-moon"></i></button>
+      <button id="themeToggle" class="btn ghost" style="padding:10px 14px;font-size:14px"><i
+          class="fas fa-moon"></i></button>
     </div>
   </header>
 
@@ -173,13 +477,24 @@
   <section id="about">
     <h2>About Me</h2>
     <div class="card">
-      <p> Hey Iam Yasein I am a Computer & Communications Engineering student at Alexandria University (expected graduation 2027) . At 13, before I even learned to code , I discovered my passion for engineering , I built my first drone by experimenting with circuits and robotics — a moment that shaped how I see challenges: as opportunities to create. A year later, I was selected to compete in a national program by the Ministry of Communications designed to train top talent for international programming contests.
+      <p> Hey Iam Yasein I am a Computer & Communications Engineering student at Alexandria University (expected
+        graduation 2027) . At 13, before I even learned to code , I discovered my passion for engineering , I built my
+        first drone by experimenting with circuits and robotics — a moment that shaped how I see challenges: as
+        opportunities to create. A year later, I was selected to compete in a national program by the Ministry of
+        Communications designed to train top talent for international programming contests.
 
-Now, as a Computer & Communications Engineering student at Alexandria University , I’ve grown from hardware tinkering to software innovation, with a solid background in programming (C, Java) and a strong focus on data analysis, machine learning, and AI. I enjoy turning raw data into insights and developing AI-driven applications with real-world impact, particularly in healthcare and automation.
+        Now, as a Computer & Communications Engineering student at Alexandria University , I’ve grown from hardware
+        tinkering to software innovation, with a solid background in programming (C, Java) and a strong focus on data
+        analysis, machine learning, and AI. I enjoy turning raw data into insights and developing AI-driven applications
+        with real-world impact, particularly in healthcare and automation.
 
-I thrive both independently and in teams — collaboration sharpens my communication and leadership skills, while solo projects push my focus and creativity. Beyond academics, I’ve led and contributed to large volunteer initiatives, from organizing events to supporting medical campaigns, experiences that taught me how to deliver under pressure and make a difference at scale.
+        I thrive both independently and in teams — collaboration sharpens my communication and leadership skills, while
+        solo projects push my focus and creativity. Beyond academics, I’ve led and contributed to large volunteer
+        initiatives, from organizing events to supporting medical campaigns, experiences that taught me how to deliver
+        under pressure and make a difference at scale.
 
-What excites me most is leaving a personal fingerprint on every project: building solutions that are innovative, reliable, and designed to truly matter.</p>
+        What excites me most is leaving a personal fingerprint on every project: building solutions that are innovative,
+        reliable, and designed to truly matter.</p>
     </div>
   </section>
 
@@ -187,11 +502,26 @@ What excites me most is leaving a personal fingerprint on every project: buildin
   <section id="skills" style="background:var(--section-bg)">
     <h2>Skills & Tools</h2>
     <div class="skills">
-      <div class="card"><h3>Programming Languages</h3><p>C, Java, C++ (basic), Python (basic)</p></div>
-      <div class="card"><h3>Data & Analytics</h3><p>SQL, Excel, Google Data Studio</p></div>
-      <div class="card"><h3>Tools</h3><p>Git, GitHub, MS Office</p></div>
-      <div class="card"><h3>Embedded & Robotics</h3><p>Arduino, Microcontrollers</p></div>
-      <div class="card"><h3>Soft Skills</h3><p>Problem-Solving, Teamwork, Communication, Time Management</p></div>
+      <div class="card">
+        <h3>Programming Languages</h3>
+        <p>C, Java, C++ (basic), Python (basic)</p>
+      </div>
+      <div class="card">
+        <h3>Data & Analytics</h3>
+        <p>SQL, Excel, Google Data Studio</p>
+      </div>
+      <div class="card">
+        <h3>Tools</h3>
+        <p>Git, GitHub, MS Office</p>
+      </div>
+      <div class="card">
+        <h3>Embedded & Robotics</h3>
+        <p>Arduino, Microcontrollers</p>
+      </div>
+      <div class="card">
+        <h3>Soft Skills</h3>
+        <p>Problem-Solving, Teamwork, Communication, Time Management</p>
+      </div>
     </div>
   </section>
 
@@ -205,9 +535,11 @@ What excites me most is leaving a personal fingerprint on every project: buildin
         <h3>Java-based Social Media Platform</h3>
         <p><strong>Purpose:</strong> Simulated core social features (login, profiles, messaging, notifications).</p>
         <p><strong>Role & Tech:</strong> Student Developer · Java, OOP, Data Structures, Git</p>
-        <p><strong>What I did:</strong> Built user management, message queues, and notifications. Applied OOP patterns and Git.</p>
+        <p><strong>What I did:</strong> Built user management, message queues, and notifications. Applied OOP patterns
+          and Git.</p>
         <p><strong>Outcome:</strong> Completed full platform as coursework, improving OOP and teamwork.</p>
-        <a href="https://github.com/OmarEzz2005/Social-Media-Platform" class="btn ghost" target="_blank">View on GitHub</a>
+        <a href="https://github.com/OmarEzz2005/Social-Media-Platform" class="btn ghost" target="_blank">View on
+          GitHub</a>
       </div>
       <!-- AI -->
       <div class="card project">
@@ -233,10 +565,12 @@ What excites me most is leaving a personal fingerprint on every project: buildin
         <h3>MNIST Gradio App</h3>
         <p><strong>Purpose:</strong> Handwritten digit classification app with a web interface.</p>
         <p><strong>Role & Tech:</strong> Team Leader · Gradio, Hugging Face Spaces, Python, GitHub</p>
-        <p><strong>What I did:</strong> Led the team, built and deployed the Gradio app, integrated with Hugging Face Spaces, managed GitHub repo, and validated code functionality.</p>
+        <p><strong>What I did:</strong> Led the team, built and deployed the Gradio app, integrated with Hugging Face
+          Spaces, managed GitHub repo, and validated code functionality.</p>
         <p><strong>Outcome:</strong> Fully working digit recognition demo accessible online.</p>
         <a href="https://github.com/LADA52/MNIST-Gradio-App" class="btn ghost" target="_blank">View on GitHub</a>
-        <a href="https://huggingface.co/spaces/yasein1eldeeb/MNIST-Gradio-App" class="btn ghost" target="_blank">View on Hugging Face</a>
+        <a href="https://huggingface.co/spaces/yasein1eldeeb/MNIST-Gradio-App" class="btn ghost" target="_blank">View on
+          Hugging Face</a>
       </div>
     </div>
   </section>
@@ -290,7 +624,8 @@ What excites me most is leaving a personal fingerprint on every project: buildin
       <h3>Bachelor of Engineering – Computer & Communications</h3>
       <p><strong>University:</strong> Alexandria University, Egypt</p>
       <p><strong>Duration:</strong> 2022 – Expected 2027</p>
-      <p><strong>Relevant Courses:</strong> C Programming, Java Programming, Data Structures, Robotics, Microcontrollers</p>
+      <p><strong>Relevant Courses:</strong> C Programming, Java Programming, Data Structures, Robotics, Microcontrollers
+      </p>
     </div>
   </section>
 
@@ -303,7 +638,8 @@ What excites me most is leaving a personal fingerprint on every project: buildin
         <p><strong>Mobility Talk Students' Summit</strong><br>Cairo University (Jan 2025)</p>
       </div>
       <div class="card certificate">
-        <img src="NIVIDIA-Gettting-started-with-deap-learning.jpg" alt="NVIDIA Certificate" onclick="openLightbox(this)">
+        <img src="NIVIDIA-Gettting-started-with-deap-learning.jpg" alt="NVIDIA Certificate"
+          onclick="openLightbox(this)">
         <p><strong>NVIDIA — Getting Started with Deep Learning</strong><br>2025</p>
       </div>
       <div class="card">
@@ -318,14 +654,15 @@ What excites me most is leaving a personal fingerprint on every project: buildin
     <img id="lightbox-img" src="" alt="Expanded certificate">
   </div>
 
-   <section id="contact" class="contact">
+  <section id="contact" class="contact">
     <h2>Contact</h2>
     <p>Open to internships, freelance projects, and collaborations.</p>
     <div class="links">
       <a class="btn" href="mailto:Yasein.eldeeb3@gmail.com"><i class="fas fa-envelope"></i> Email</a>
       <a class="btn ghost" href="tel:+2001202258655"><i class="fas fa-phone"></i> Call</a>
       <a class="btn ghost" href="https://github.com/LADA52" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-      <a class="btn ghost" href="https://linkedin.com/in/yasein-eldeeb-72686b1b4" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a class="btn ghost" href="https://linkedin.com/in/yasein-eldeeb-72686b1b4" target="_blank"><i
+          class="fab fa-linkedin"></i> LinkedIn</a>
       <a class="btn" href="My-Resume.pdf" download><i class="fas fa-file-pdf"></i> Download CV</a>
     </div>
   </section>
@@ -334,7 +671,8 @@ What excites me most is leaving a personal fingerprint on every project: buildin
       <p>© <span id="year"></span> Yasein Eldeeb. All rights reserved.</p>
       <div class="social-links">
         <a href="https://github.com/LADA52" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/yasein-eldeeb-72686b1b4" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://linkedin.com/in/yasein-eldeeb-72686b1b4" target="_blank" aria-label="LinkedIn"><i
+            class="fab fa-linkedin"></i></a>
         <a href="mailto:Yasein.eldeeb3@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
@@ -344,7 +682,7 @@ What excites me most is leaving a personal fingerprint on every project: buildin
   <button id="backToTop" aria-label="Back to Top"><i class="fas fa-arrow-up"></i></button>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
       const themeBtn = document.getElementById('themeToggle');
       const yearEl = document.getElementById("year");
       const backToTop = document.getElementById("backToTop");
@@ -403,21 +741,21 @@ What excites me most is leaving a personal fingerprint on every project: buildin
         });
       });
 
-      close.addEventListener('click', () => { 
-        lightbox.style.display='none'; 
-        document.body.style.overflow = ''; 
+      close.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = '';
       });
 
-      lightbox.addEventListener('click', e => { 
-        if(e.target===lightbox){ 
-          lightbox.style.display='none'; 
-          document.body.style.overflow = ''; 
-        } 
+      lightbox.addEventListener('click', e => {
+        if (e.target === lightbox) {
+          lightbox.style.display = 'none';
+          document.body.style.overflow = '';
+        }
       });
 
       document.addEventListener('keydown', e => {
-        if(e.key === "Escape"){
-          lightbox.style.display='none';
+        if (e.key === "Escape") {
+          lightbox.style.display = 'none';
           document.body.style.overflow = '';
         }
       });
@@ -439,48 +777,57 @@ What excites me most is leaving a personal fingerprint on every project: buildin
 
   <style>
     footer {
-      text-align:center;
-      padding:20px;
-      background:#1A2B4C;
-      color:#fff;
-      font-size:14px;
-      margin-top:40px;
+      text-align: center;
+      padding: 20px;
+      background: #1A2B4C;
+      color: #fff;
+      font-size: 14px;
+      margin-top: 40px;
     }
+
     .footer-container {
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap:10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
     }
+
     .social-links a {
-      color:#fff;
-      margin:0 10px;
-      font-size:20px;
-      transition:color .3s;
+      color: #fff;
+      margin: 0 10px;
+      font-size: 20px;
+      transition: color .3s;
     }
-    .social-links a:hover { color:#0DCAF0; }
+
+    .social-links a:hover {
+      color: #0DCAF0;
+    }
 
     /* Back to Top */
     #backToTop {
-      position:fixed;
-      bottom:20px;
-      right:20px;
-      background:#0D6EFD;
-      color:#fff;
-      border:none;
-      border-radius:50%;
-      width:45px;height:45px;
-      display:none;
-      justify-content:center;
-      align-items:center;
-      cursor:pointer;
-      box-shadow:0 4px 12px rgba(0,0,0,0.2);
-      transition:background .3s, transform .3s;
-      z-index:999;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #0D6EFD;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: background .3s, transform .3s;
+      z-index: 999;
     }
-    #backToTop:hover { background:#0B5ED7; transform:scale(1.1); }
+
+    #backToTop:hover {
+      background: #0B5ED7;
+      transform: scale(1.1);
+    }
   </style>
 </body>
+
 </html>
-
-
