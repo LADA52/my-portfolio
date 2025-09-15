@@ -469,8 +469,7 @@
 <body>
   <!-- HEADER -->
   <header>
-    <div
-      style="max-width:1100px;margin:0 auto;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;">
+    <div class="navbar">
       <div class="brand"><strong>Yasein Eldeeb</strong></div>
       <nav>
         <a href="#about">About</a>
@@ -479,23 +478,23 @@
         <a href="#offers">Offers</a>
         <a href="#education">Education</a>
         <a href="#achievements">Certificates</a>
-        <a href="#contact">Contact-me</a>
+        <a href="#contact">Contact</a>
       </nav>
-      <button id="themeToggle" class="btn ghost" style="padding:10px 14px;font-size:14px"><i
-          class="fas fa-moon"></i></button>
+      <button id="themeToggle" class="btn ghost"><i class="fas fa-moon"></i></button>
     </div>
   </header>
 
+
   <!-- HERO -->
-<section class="hero visible">
-  <img src="profilepic.jpg" alt="Profile Picture">
-  <h1>Yasein Ossama Mohamed Eldeeb</h1>
-  <div class="typing">Programmer / Software Developer</div>
-  <p>I build clean, reliable software and turn data & ideas into usable products.</p>
-  <a href="#contact" class="btn">
-    <i class="fas fa-paper-plane"></i> Hire Me
-  </a>
-</section>
+  <section class="hero visible">
+    <img src="profilepic.jpg" alt="Profile Picture">
+    <h1>Yasein Ossama Mohamed Eldeeb</h1>
+    <div class="typing">Programmer / Software Developer</div>
+    <p>I build clean, reliable software and turn data & ideas into usable products.</p>
+    <a href="#contact" class="btn">
+      <i class="fas fa-paper-plane"></i> Hire Me
+    </a>
+  </section>
 
 
   <!-- ABOUT -->
@@ -682,6 +681,24 @@
   <section id="contact" class="contact">
     <h2>Contact</h2>
     <p>Open to internships, freelance projects, and collaborations.</p>
+    <form action="https://formspree.io/f/meolwovj" method="POST" class="card"
+      style="max-width:600px; margin:20px auto; text-align:left;">
+      <label for="name">Name</label><br>
+      <input type="text" id="name" name="name" required placeholder="Your Name"
+        style="width:100%;padding:10px;margin:8px 0;border-radius:8px;border:1px solid #ccc;">
+
+      <label for="email">Email</label><br>
+      <input type="email" id="email" name="_replyto" required placeholder="Your Email"
+        style="width:100%;padding:10px;margin:8px 0;border-radius:8px;border:1px solid #ccc;">
+
+      <label for="message">Message</label><br>
+      <textarea id="message" name="message" rows="5" required placeholder="Your Message"
+        style="width:100%;padding:10px;margin:8px 0;border-radius:8px;border:1px solid #ccc;"></textarea>
+
+      <button type="submit" class="btn" style="margin-top:10px;">
+        <i class="fas fa-paper-plane"></i> Send
+      </button>
+    </form>
     <div class="links">
       <a class="btn" href="mailto:Yasein.eldeeb3@gmail.com"><i class="fas fa-envelope"></i> Email</a>
       <a class="btn ghost" href="tel:+2001202258655"><i class="fas fa-phone"></i> Call</a>
@@ -826,6 +843,53 @@
 
     .social-links a:hover {
       color: #0DCAF0;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.9);
+      /* شبه شفاف */
+      backdrop-filter: blur(8px);
+      /* تأثير زجاج */
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .navbar {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    nav a {
+      margin: 0 12px;
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--heading);
+      transition: color 0.3s, border-color 0.3s;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+    }
+
+    nav a:hover {
+      color: var(--secondary);
+      border-bottom: 2px solid var(--secondary);
+    }
+
+    #themeToggle {
+      padding: 8px 12px;
+      font-size: 14px;
     }
 
     /* Back to Top */
