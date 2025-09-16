@@ -99,8 +99,8 @@
       //Editing
 
           const roles = ["Programmer", "Software Developer"];
-    let index = 0;      // الدور الحالي (Programmer / Developer)
-    let charIndex = 0;  // الحرف الحالي
+    let index = 0;    
+    let charIndex = 0; 
     let isDeleting = false;
     const roleElement = document.getElementById("role");
 
@@ -108,22 +108,21 @@
       const currentRole = roles[index];
 
       if (isDeleting) {
-        // لو بيتمسح
+       
         roleElement.textContent = currentRole.substring(0, charIndex--);
         if (charIndex < 0) {
           isDeleting = false;
-          index = (index + 1) % roles.length; // انتقل للدور التالي
+          index = (index + 1) % roles.length; 
         }
       } else {
-        // لو بيتكتب
         roleElement.textContent = currentRole.substring(0, charIndex++);
         if (charIndex > currentRole.length) {
           isDeleting = true;
-          setTimeout(typeEffect, 800); // استنى ثانية بعد الكتابة
+          setTimeout(typeEffect, 800); 
           return;
         }
       }
-      setTimeout(typeEffect, isDeleting ? 50 : 100); // سرعة الكتابة/المسح
+      setTimeout(typeEffect, isDeleting ? 50 : 100); 
     }
 
     typeEffect();
