@@ -630,3 +630,13 @@
    background: #0B5ED7;
    transform: scale(1.1);
  }
+ #role::after {
+  content: "|";
+  animation: blink 0.7s infinite;
+  margin-left: 3px;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
